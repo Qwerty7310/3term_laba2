@@ -3,6 +3,8 @@
 int main() {
     //Создаем массив указателей на функции
     int (*func[])(int*, int, int, int&) = {Better_Linear_Search, Sentinel_Linear_Search, Ordered_Array_Search, Binary_Search};
+    int comparisons_BLS[11][3] = {};
+    int comparisons_SLS[11][3] = {};
 
     for (int i = 10'000; i <= 200'000; i += 19'000)
     {
@@ -33,7 +35,7 @@ int main() {
                 auto elapsed_ms = std::chrono::duration_cast<std::chrono::microseconds>(end - begin); //Считаем разницу
                 sum_time += elapsed_ms.count(); //Прибавляем к суммарному времени
             }
-            cout << sum_time / N << '_'; //Выводим среднее время на экран
+//            cout << sum_time / N << '_'; //Выводим среднее время на экран
             cout << count << '\t'; //Выводим количетство сравнений. Если -1, то функция не считает количество сравнений
 
             //Находим время работы нахождения ключа в середине
@@ -45,7 +47,7 @@ int main() {
                 auto elapsed_ms = std::chrono::duration_cast<std::chrono::microseconds>(end - begin); //Считаем разницу
                 sum_time += elapsed_ms.count(); //Прибавляем к суммарному времени
             }
-            cout << sum_time / N << '_'; //Выводим среднее время на экран
+//            cout << sum_time / N << '_'; //Выводим среднее время на экран
             cout <<  count << '\t'; //Выводим количетство сравнений. Если -1, то функция не считает количество сравнений
 
             //Находим время работы нахождения ключа в середине
@@ -57,7 +59,7 @@ int main() {
                 auto elapsed_ms = std::chrono::duration_cast<std::chrono::microseconds>(end - begin); //Считаем разницу
                 sum_time += elapsed_ms.count(); //Прибавляем к суммарному времени
             }
-            cout << sum_time / N << '_'; //Выводим среднее время на экран
+//            cout << sum_time / N << '_'; //Выводим среднее время на экран
             cout <<  count << '\t' << endl; //Выводим количетство сравнений. Если -1, то функция не считает количество сравнений
 
         }

@@ -75,8 +75,11 @@ int Sentinel_Linear_Search(int *array, int n, int x, int &count) {
     }
     count++;
     array[n-1] = last;
-    if ((i < n) || (array[n-1] == x))
+    if ((i < n) || (array[n-1] == x)) {
+        count++;
         return i;
+
+    }
     return -1;
 }
 
